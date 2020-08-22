@@ -9,6 +9,7 @@ from optstoicpy.script.solver import (
     ORDERED_SOLVERS)
 import optstoicpy.script.optstoic_glycolysis as optsg
 import optstoicpy.script.optstoic as opts
+import pdb
 
 
 class TestOptStoic(unittest.TestCase):
@@ -68,8 +69,9 @@ class TestOptStoic(unittest.TestCase):
         lp_prob, pathways = model.solve(outputfile='test_optstoic.txt')
         #test.max_iteration = test.max_iteration + 1
         #lp_prob, pathways = test.solve(outputfile='test_optstoic.txt', exclude_existing_solution=True)
-
-        self.assertEqual(pathways[1]['modelstat'], 'Optimal')
+        
+#         pdb.set_trace()
+        self.assertEqual(pathways[1].note['modelstat'], 'Optimal')
 
     def test_general_optstoic(self):
         """Test optstoic analysis with standard setup
@@ -163,4 +165,5 @@ class TestOptStoic(unittest.TestCase):
         lp_prob, pathways = model.solve(
             outputfile='test_optstoic_general.txt')
 
-        self.assertEqual(pathways[1]['modelstat'], 'Optimal')
+#         pdb.set_trace()
+        self.assertEqual(pathways[1].note['modelstat'], 'Optimal')
