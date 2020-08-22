@@ -2,7 +2,7 @@ import sys
 import os
 from optstoicpy.script.utils import create_logger
 from optstoicpy.script.database_preprocessing import (
-    test_blocked_reactions_analysis,
+    blocked_reactions_analysis,
     test_internal_loop_analysis)
 import optstoicpy.script.optstoic_glycolysis as optstoic_gly
 import optstoicpy.script.optstoic as optstoic
